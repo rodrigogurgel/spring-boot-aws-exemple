@@ -21,7 +21,14 @@ repositories {
 val springCloudAwsVersion = properties["springCloudAwsVersion"]
 
 dependencies {
+	implementation("io.awspring.cloud:spring-cloud-aws-starter-sqs")
+	implementation("io.awspring.cloud:spring-cloud-aws-starter-sns")
+	implementation("io.awspring.cloud:spring-cloud-aws-starter-s3")
+
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.springframework.boot:spring-boot-starter-mail")
+
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

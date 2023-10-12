@@ -1,0 +1,32 @@
+server:
+    shutdown: graceful
+
+spring:
+    lifecycle:
+        timeout-per-shutdown-phase: 1m
+    cloud:
+        aws:
+            endpoint: http://localhost:4566
+            region:
+                static: us-east-1
+            credentials:
+                access-key: noop
+                secret-key: noop
+            s3:
+                path-style-access-enabled: true
+    mail:
+        username: ${MAIL_USER}
+        host: smtp.gmail.com
+        port: 587
+        password: ${MAIL_PASSWORD}
+        properties:
+            mail:
+                smtp:
+                    starttls:
+                        required: true
+                    auth: true
+                transport:
+                    protocol: smtp
+                starttls:
+                    enable: true
+

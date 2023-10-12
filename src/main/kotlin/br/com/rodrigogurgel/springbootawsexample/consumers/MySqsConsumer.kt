@@ -19,7 +19,6 @@ class MySqsConsumer(
     @SqsListener("my-queue")
     fun listen(@RequestBody email: String) {
         val randomNum = Math.random() * 10
-        if (email.contains("error", ignoreCase = true)) throw RuntimeException("Fail to process message: $email")
         logger.info("Received message {}", email)
 
         val message = SimpleMailMessage()
